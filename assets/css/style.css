@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.calendar > .nav {
+    align-items: center;
+}
+.calendar > div {
+    display: flex;
+    justify-content: space-evenly;
+}
+.calendar > div > div {
+    padding: 12px;
+}
+.calendar > .header > div, .calendar > .body > div {
+    flex: 1 0 120px;
+    border-right: 1px solid #e6e6e6;
+}
+.fas:focus {
+    outline: none;
+    opacity: 1;
+}
