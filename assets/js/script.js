@@ -1,4 +1,4 @@
-var calender = document.getElementById("calender")
+var calendar = document.getElementById("calendar")
 var recipe = document.getElementById("recipe")
 var grocerys = document.getElementById("grocerys")
 var maps = document.getElementById("maps")
