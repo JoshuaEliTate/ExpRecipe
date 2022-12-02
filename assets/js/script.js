@@ -1,0 +1,5 @@
+var calender = document.getElementById("calender")
+var recipe = document.getElementById("recipe")
+var grocerys = document.getElementById("grocerys")
+var maps = document.getElementById("maps")
+var addButton = document.getElementById("addButton")
