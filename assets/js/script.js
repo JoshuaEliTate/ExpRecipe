@@ -1,5 +1,5 @@
-var calendar = document.getElementById("calendar")
+var calendar = document.getElementById("calendarPage")
 var recipe = document.getElementById("recipe")
-var grocerys = document.getElementById("grocerys")
+var groceries = document.getElementById("groceries")
 var maps = document.getElementById("maps")
 var addButton = document.getElementById("addButton")
