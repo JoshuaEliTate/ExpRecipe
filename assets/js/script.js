@@ -2,12 +2,17 @@
 // var recipe = document.getElementById("recipe")
 // var grocerys = document.getElementById("grocerys")
 // var maps = document.getElementById("maps")
-// var addButton = document.getElementById("addButton")
+var addButton = document.getElementById("addButton")
 // var mapsApi = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyA1JXEKT9a254rpI4wE82X8QYKPL1N5oB0&callback=initMap'
-var recipeButton = document.getElementById("recipe");
 var recipePage = document.getElementById("recipePage");
 var groceryPage = document.getElementById("groceryPage");
 var map = document.getElementById("map");
+var recipe = document.getElementsByClassName("recipe");
+var groceries = document.getElementsByClassName("groceries");
+var maps = document.getElementsByClassName("maps");
+var mapSearch = document.getElementById("mapSearch")
+var input = document.getElementById("pac-input");
+
 
 function initAutocomplete() {
   const map = new google.maps.Map(document.getElementById("map"), {
@@ -23,8 +28,8 @@ function initAutocomplete() {
   // Bias the SearchBox results towards current map's viewport.
   map.addListener("bounds_changed", () => {
     searchBox.setBounds(map.getBounds());
-  });
 
+  });
   let markers = [];
 
   // Listen for the event fired when the user selects a prediction and retrieve
@@ -104,9 +109,10 @@ function searchButtonClickHandler() {
       console.log("got the data");
       console.log(data);
     });
+
 }
   
-  recipePage.style.display = "flex";
+
 
   // button click function
   document
@@ -118,8 +124,42 @@ function searchButtonClickHandler() {
     });
 
 var recipeClicker = function(){
-recipePage.style.display="block"
-groceryPage.style.display="none"
-map.style.display="none"
+  recipePage.style.display = "flex";
+  groceryPage.style.display="none"
+  map.style.display="none"
+  addButton.style.display="block"
+  console.log("recipe")
 }
-recipeButton.addEventListener('click', recipeClicker);
+
+var groceryClicker = function(){
+  recipePage.style.display="none"
+  groceryPage.style.display="block"
+  map.style.display="none"
+  input.style.display="none"
+  addButton.style.display="block"
+  console.log("apples")
+}
+
+var mapClicker = function(){
+  recipePage.style.display="none"
+  groceryPage.style.display="none"
+  map.style.display="block"
+  input.style.display="block"
+  addButton.style.display="none"
+  console.log("map")
+}
+
+
+ function addListenerToClasses(collection, callback){
+  for (var i = 0; i < collection.length; i += 1) {
+    collection[i].addEventListener('click', callback)
+  }
+ }
+
+ addListenerToClasses(recipe, recipeClicker)
+ addListenerToClasses(maps, mapClicker)
+ addListenerToClasses(groceries, groceryClicker)
+
+// maps.addEventListener('click', mapClicker);
+// recipe.addEventListener('click', recipeClicker);
+// groceries.addEventListener('click', groceryClicker);
