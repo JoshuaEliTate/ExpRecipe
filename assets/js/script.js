@@ -110,9 +110,10 @@ function searchButtonClickHandler() {
     });
     
 
-    
+}
     
     function displayRecipes(data){
+        console.log(data)
         if (data.hits.length === 0) {
           recipeContainerEl.textContent = 'No recipes found.'; 
           return;
@@ -130,11 +131,7 @@ function searchButtonClickHandler() {
           var innerRecipeEl = document.createElement('div');
 
             onClick(recipeEl, data.hits[i])
-        //   var titleEl = document.createElement('iframe');
-        //   titleEl.setAttribute('src',data.hits[i].recipe.uri)
-        // titleEl.setAttribute('title',data.hits[i].recipe.label)
-      
-        //   recipeEl.appendChild(titleEl);
+       
       
             var addIngredientsButton = document.createElement('button')
             addIngredientsButton.innerText = "Add Ingredients to Grocery List"
@@ -147,9 +144,6 @@ function searchButtonClickHandler() {
         }
       };
 
-   
-      displayRecipes();
-}
 
 function onClick(element, data){
     element.addEventListener('click', function(){
@@ -180,8 +174,9 @@ function onClick(element, data){
     .addEventListener("click", function () {
     //   searchButtonClickHandler();
       console.log("clicked")
+      console.log("debug recipes", displayRecipes  )
       searchButtonClickHandler();
-      displayRecipes();
+      console.log(displayRecipes,"displaying recipes")
     });
 
 
@@ -189,41 +184,5 @@ function onClick(element, data){
 var recipePage = document.getElementById("recipePage");
 // recipePage.style.display = "none";
 
-//function for button click
-function searchButtonClickHandler() {
-  console.log("clicked");
-  var searchTerm = document.getElementById("searchValue").value;
-  console.log(searchTerm);
-
-// if searchTerm.includes(" "){
-//     searchTerm.value.replace(" ", "%20")
-// }
- var url =  "https://api.edamam.com/api/recipes/v2?type=public&q=" + searchTerm + "&app_id=721b4d87&app_key=0475da3604824a32e01eca985922f4e9"
- url = encodeURI(url);
- console.log(url);
-  //fetch api and run functions for large weather card and five days
-  fetch(url)
-    .then((response) => response.json())
-    .then((data) => {
-      console.log("got the data");
-      console.log(data);
-    });
-}
-  
-  recipePage.style.display = "flex";
-
-  // button click function
-  document
-    .getElementById("recipeSearchBtn")
-    .addEventListener("click", function () {
-    //   searchButtonClickHandler();
-      console.log("clicked")
-      searchButtonClickHandler();
-    });
-
-var recipeClicker = function(){
-recipePage.style.display="block"
-groceryPage.style.display="none"
-map.style.display="none"
-}
 recipeButton.addEventListener('click', recipeClicker);
+
