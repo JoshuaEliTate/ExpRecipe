@@ -24,7 +24,7 @@
             <button>Add Recipe</button>
         </div>
         <main> 
-            <div class='grocery-list'>
+            <div class='grocery-list' id="groceryPage">
               <h3>Grocery List</h3>
 
             </div>
@@ -47,14 +47,9 @@
             
         </main>
 
-        <input
-        id="pac-input"
-        class="controls"
-        type="text"
-        placeholder="Search Box"
-      />
-      <div id="map"></div>
-      <script
+    <input id="pac-input" class="controls" type="text" placeholder="Search Box"/>
+    <div id="map"></div>
+    <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1JXEKT9a254rpI4wE82X8QYKPL1N5oB0&callback=initAutocomplete&libraries=places&v=weekly"
       defer
     ></script>

@@ -4,10 +4,14 @@
 // var maps = document.getElementById("maps")
 // var addButton = document.getElementById("addButton")
 // var mapsApi = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyA1JXEKT9a254rpI4wE82X8QYKPL1N5oB0&callback=initMap'
+var recipeButton = document.getElementById("recipe");
+var recipePage = document.getElementById("recipePage");
+var groceryPage = document.getElementById("groceryPage");
+var map = document.getElementById("map");
 
 function initAutocomplete() {
   const map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: -33.8688, lng: 151.2195 },
+    center: { lat: 47.608013, lng:  -122.335167 },
     zoom: 13,
     mapTypeId: "roadmap",
   });
@@ -113,3 +117,9 @@ function searchButtonClickHandler() {
       searchButtonClickHandler();
     });
 
+var recipeClicker = function(){
+recipePage.style.display="block"
+groceryPage.style.display="none"
+map.style.display="none"
+}
+recipeButton.addEventListener('click', recipeClicker);
