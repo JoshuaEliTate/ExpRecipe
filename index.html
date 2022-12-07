@@ -13,7 +13,7 @@
         <header>
             <h1>Meal Planner</h1>
             <section>
-                <h2 id="calenderPage">Calender</h2>
+                
 
                 <h2 id="recipe">Recipe</h2>
                 <h2 id="groceries">Groceries</h2>
@@ -24,78 +24,10 @@
             <button>Add Recipe</button>
         </div>
         <main> 
-            <section id="TEST">
-                <h2>Calender</h2>
-                <div class="container">
-                    <div class="calendar">
-                      <div class="nav">
-                        <i id="prev" class="fas fa-arrow-left arrow" tabindex="0">previous</i>
-                        <div class="calendar-icon-container">
-                          <h1 id="date-range"></h1>
-                          <div>
-                            <div id="calendar-popover" class="calendar-popover hidden">
-                            </div>
-                          </div>
-                        </div>
-                        <i id="next" class="fas fa-arrow-right arrow" tabindex="0">next</i>
-                      </div>
-                      <div id="header" class="header">
-                        <div>
-                          <div>Monday</div>
-                          <div class="date"></div>
-                        </div>
-                        <div>
-                          <div>Tuesday</div>
-                          <div class="date"></div>
-                        </div>
-                        <div>
-                          <div>Wednesday</div>
-                          <div class="date"></div>
-                        </div>
-                        <div>
-                          <div>Thursday</div>
-                          <div class="date"></div>
-                        </div>
-                        <div>
-                          <div>Friday</div>
-                          <div class="date"></div>
-                        </div>
-                        <div>
-                          <div>Saturday</div>
-                          <div class="date"></div>
-                        </div>
-                        <div>
-                          <div>Sunday</div>
-                          <div class="date"></div>
-                        </div>
-                      </div>
-                      <div class="body">
-                        <div>
-                            <li>text</li>
-                        </div>
-                        <div>
-                            <li>text</li>
-                        </div>
-                        <div>
-                            <li>text</li>
-                        </div>
-                        <div>
-                            <li>....</li>
-                        </div>
-                        <div>
-                            <li>text</li>
-                        </div>
-                        <div>
-                            <li>text</li>
-                        </div>
-                        <div>
-                            <li>text</li>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-            </section>
+            <div class='grocery-list' id="groceryPage">
+              <h3>Grocery List</h3>
+
+            </div>
             <section style="display:none" id="dailyMeals">
                 <h2>Clicked on Days Date</h2>
             </section>
@@ -110,25 +42,19 @@
                         <button id="recipeSearchBtn"class="btn">Go!</button>
                       </div id="results">
                     </div>
+
                     <div id="recipeResults">
 
                     </div>
                     
                    
-                     
-                    
             </section>
             
         </main>
 
-        <input
-        id="pac-input"
-        class="controls"
-        type="text"
-        placeholder="Search Box"
-      />
-      <div id="map"></div>
-      <script
+    <input id="pac-input" class="controls" type="text" placeholder="Search Box"/>
+    <div id="map"></div>
+    <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1JXEKT9a254rpI4wE82X8QYKPL1N5oB0&callback=initAutocomplete&libraries=places&v=weekly"
       defer
     ></script>
