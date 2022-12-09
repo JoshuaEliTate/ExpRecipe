@@ -234,5 +234,5 @@ var mapClicker = function(){
 var recipePage = document.getElementById("recipePage");
 // recipePage.style.display = "none";
 
-recipeButton.addEventListener('click', recipeClicker);
+// recipeButton.addEventListener('click', recipeClicker);
 
