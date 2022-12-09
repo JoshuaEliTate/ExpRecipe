@@ -91,6 +91,7 @@ window.initAutocomplete = initAutocomplete;
 //recipe page
 var recipePage = document.getElementById("recipePage");
 var recipeContainerEl = document.getElementById("recipeResults")
+recipeContainerEl.setAttribute('id',"recipeContainer")
 // recipePage.style.display = "none";
 
 //function for button click
@@ -141,11 +142,14 @@ function searchButtonClickHandler() {
           recipeEl.innerText = data.hits[i].recipe.label
 
           var innerRecipeEl = document.createElement('div');
+          innerRecipeEl.setAttribute('id', "innerRecipeElCon")
 
             onClick(recipeEl, data.hits[i])
        
       
             var addIngredientsButton = document.createElement('button')
+            addIngredientsButton.setAttribute('id',"ingredientsButton")
+            
             addIngredientsButton.innerText = "Add Ingredients to Grocery List"
             
             addIngredients(addIngredientsButton, data.hits[i])
