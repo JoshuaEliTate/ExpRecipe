@@ -198,27 +198,27 @@ function onClick(element, data){
 
 var recipeClicker = function(){
   recipePage.style.display = "flex";
-  groceryPage.style.display="none"
+  // groceryPage.style.display="none"
   map.style.display="none"
-  addButton.style.display="block"
+  // addButton.style.display="block"
   console.log("recipe")
 }
 
-var groceryClicker = function(){
-  recipePage.style.display="none"
-  groceryPage.style.display="block"
-  map.style.display="none"
-  input.style.display="none"
-  addButton.style.display="block"
-  console.log("apples")
-}
+// var groceryClicker = function(){
+//   recipePage.style.display="none"
+//   groceryPage.style.display="block"
+//   map.style.display="none"
+//   input.style.display="none"
+//   addButton.style.display="block"
+//   console.log("apples")
+// }
 
 var mapClicker = function(){
   recipePage.style.display="none"
-  groceryPage.style.display="none"
+  // groceryPage.style.display="none"
   map.style.display="block"
   input.style.display="block"
-  addButton.style.display="none"
+  // addButton.style.display="none"
   console.log("map")
 }
 
