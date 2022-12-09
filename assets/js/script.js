@@ -163,6 +163,7 @@ function onClick(element, data){
     element.addEventListener('click', function(){
         
         var recipeModal = document.createElement('div');
+        recipeModal.setAttribute('id', "iframeContainer")
         var exitButton = document.createElement('button');
         exitButton.innerText = 'X'
         recipeModal.appendChild(exitButton)
