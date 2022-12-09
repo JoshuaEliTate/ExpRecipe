@@ -3,6 +3,12 @@
     align-items: center;
     flex-direction: column;
 }
+.grey{
+  background-color: dimgrey;
+  border-bottom: black;
+  border-width: 3px;
+  border-bottom-style: solid;
+}
 .calendar > .nav {
     align-items: center;
 }
