@@ -14,6 +14,7 @@ var mapSearch = document.getElementById("mapSearch")
 var input = document.getElementById("pac-input");
 
 
+
 function initAutocomplete() {
   const map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 47.608013, lng:  -122.335167 },
@@ -122,7 +123,9 @@ function searchButtonClickHandler() {
     
     
     function displayRecipes(data){
-        console.log(data)
+      recipeContainerEl.innerHTML = ""
+      
+      console.log(data)
         if (data.hits.length === 0) {
           recipeContainerEl.textContent = 'No recipes found.'; 
           return;
@@ -144,7 +147,9 @@ function searchButtonClickHandler() {
       
             var addIngredientsButton = document.createElement('button')
             addIngredientsButton.innerText = "Add Ingredients to Grocery List"
-
+            
+            addIngredients(addIngredientsButton, data.hits[i])
+            
 
           innerRecipeEl.appendChild(recipeEl);
           innerRecipeEl.appendChild(addIngredientsButton);
@@ -156,6 +161,7 @@ function searchButtonClickHandler() {
 
 function onClick(element, data){
     element.addEventListener('click', function(){
+        
         var recipeModal = document.createElement('div');
         var exitButton = document.createElement('button');
         exitButton.innerText = 'X'
@@ -236,3 +242,60 @@ var recipePage = document.getElementById("recipePage");
 
 // recipeButton.addEventListener('click', recipeClicker);
 
+
+var shoppingListContainerEl = document.getElementById("shoppinglist")
+console.log(shoppingListContainerEl)
+
+var allGroceryItems = JSON.parse(localStorage.getItem('groceryShoppingList'))
+
+function addIngredients(element, data){
+  element.addEventListener('click', function(){
+    for(var i=0;i<data.recipe.ingredients.length; i++){
+    console.log(data.recipe.ingredients[i])
+    var groceryListUl = document.createElement('ul')
+    var groceryItem = document.createElement('li')
+    console.log(groceryItem)
+    groceryItem.innerText = data.recipe.ingredients[i].text
+    console.log(shoppingListContainerEl)
+    groceryListUl.appendChild(groceryItem)
+    shoppingListContainerEl.appendChild(groceryListUl)
+    
+    if(allGroceryItems){
+      console.log(allGroceryItems)
+      allGroceryItems.push(data.recipe.ingredients[i].text)
+    }else{
+      allGroceryItems = [data.recipe.ingredients[i].text]
+    }
+    
+  }
+  localStorage.setItem('groceryShoppingList',JSON.stringify(allGroceryItems))
+    
+})
+}
+
+var clearGroceryButton = document.getElementById('clearGroceryList')
+
+clearGroceryButton.addEventListener('click', function clearAllGroceryListItems (){
+  localStorage.clear()
+  shoppingListContainerEl.innerHTML = ''
+}
+)
+
+window.onload = function loadPrevious(){
+  var previousGroceryItems = document.createElement('ul')
+  var groceryListArray = JSON.parse(localStorage.getItem('groceryShoppingList'))
+  for(i=0;i<groceryListArray.length; i++){
+    previousGroceryList = document.createElement('ul')
+    previousGroceryListItem = document.createElement('li')
+
+    previousGroceryListItem.innerText = groceryListArray[i]
+
+    previousGroceryList.appendChild(previousGroceryListItem)
+    shoppingListContainerEl.appendChild(previousGroceryList)
+   
+
+
+  }
+  
+ 
+}
