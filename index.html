@@ -7,7 +7,7 @@
         <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"> 
     </script>
     </head>
-        <body>
+        <body id="body">
         <header class="navbar-nav d-md-flex grey">
             <h1 class="col-6">Meal Planner</h1>
             <section class="col-6 navbar-nav d-none d-md-flex">
@@ -40,25 +40,25 @@
             </section>
 
             <section style="display:none" id="recipePage">
-                <div>
-                    <div>
+           
+                    <div id="recipeBlock">
                       <h4>Search for Recipe</h4>
                       <div>
                         <input type="text" id="searchValue" placeholder="Search for a recipe..."
                         />
-                        <button id="recipeSearchBtn"class="btn">Go!</button>
+                        <button id="recipeSearchBtn">Go!</button>
                       </div id="results">
+                      <div id="recipeResults"></div>
                     </div>
 
-                    <div id="recipeResults">
 
                     </div>
                     <div class='grocery-list' id="groceryPage" style="display:block">
                         <h3>Grocery List</h3>
                         <button id="clearGroceryList">Clear Grocery List</button>
-                        <div id="shoppinglist">
+                        <div id="shoppinglist"></div>
           
-                        </div>
+                    </div>
                     
                    
             </section>

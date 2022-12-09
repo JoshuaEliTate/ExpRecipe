@@ -1,10 +1,43 @@
+#body{
+    background-color: #DFD9E2;
+}
 .container {
     display: flex;
     align-items: center;
     flex-direction: column;
 }
+
+button {
+background-color: #C3ACCE;
+border-radius: 8px;
+}
+
+#recipeSearchBtn {
+    height: 35px;
+}
+
+#recipeBlock {
+    margin: 10px;
+    border-style: solid;
+    border-width: 3px;
+    padding: 5px;
+    border-radius: 15px;
+    border-color: #538083;
+    background-color: #CEC5D3;
+}
+
+#groceryPage {
+    margin: 10px;
+    border-style: solid;
+    border-width: 3px;
+    padding: 5px;
+    border-radius: 15px;
+    border-color: #538083;
+    background-color: #CEC5D3;
+}
+
 .grey{
-  background-color: dimgrey;
+  background-color: #89909F;
   border-bottom: black;
   border-width: 3px;
   border-bottom-style: solid;
@@ -27,6 +60,11 @@
     outline: none;
     opacity: 1;
 }
+
+main{
+    margin: 20px;
+}
+
 
 
 .modal-style{
@@ -126,6 +164,12 @@
   #target {
     width: 345px;
   }
+#recipePage{
+    /* flex-direction: row;
+    justify-content: space-around;
+    max-width: min-content; */
+}
+  
   
  #iframeContainer {
   height: 100vh;
@@ -133,10 +177,36 @@
   position: fixed;
   top: 0px;
   left: 0px;
-  background-color: #ffffffcc;
+  background-color: #b4a9a9;
+
  }
 
  iframe {
   height: 90vh;
   width: 90vw;
+  background-color: white;
+    border-radius: 20px;
  }
+
+ #ingredientsButton {
+    margin-left: 10px;
+    /* max-height: 25px; */
+}
+
+#recipeContainer{
+   display: flex;
+   flex-direction: column;
+   padding: 20px;
+}
+
+#innerRecipeElCon{
+    display: flex;
+    margin: 6px;
+    border: 2px;
+    border-color: #2A7F62;
+    border-style: solid;
+    border-radius: 8px;
+    padding: 4px;
+    justify-content: space-between;
+    background-color: #BBAEC2;
+}

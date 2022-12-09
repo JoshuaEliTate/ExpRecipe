@@ -150,7 +150,7 @@ function searchButtonClickHandler() {
             var addIngredientsButton = document.createElement('button')
             addIngredientsButton.setAttribute('id',"ingredientsButton")
             
-            addIngredientsButton.innerText = "Add Ingredients to Grocery List"
+            addIngredientsButton.innerText = "Add to List"
             
             addIngredients(addIngredientsButton, data.hits[i])
             
