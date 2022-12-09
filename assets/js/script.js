@@ -81,8 +81,10 @@ function initAutocomplete() {
 
 window.initAutocomplete = initAutocomplete;
 
+
 //recipe page
 var recipePage = document.getElementById("recipePage");
+var recipeContainerEl = document.getElementById("recipeResults")
 // recipePage.style.display = "none";
 
 //function for button click
@@ -90,22 +92,80 @@ function searchButtonClickHandler() {
   console.log("clicked");
   var searchTerm = document.getElementById("searchValue").value;
   console.log(searchTerm);
+  
 
-// if searchTerm.includes(" "){
-//     searchTerm.value.replace(" ", "%20")
-// }
+
+
  var url =  "https://api.edamam.com/api/recipes/v2?type=public&q=" + searchTerm + "&app_id=721b4d87&app_key=0475da3604824a32e01eca985922f4e9"
  url = encodeURI(url);
  console.log(url);
-  //fetch api and run functions for large weather card and five days
+
+  
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
       console.log("got the data");
       console.log(data);
+      displayRecipes(data);
     });
+    
+
 }
-  
+    
+    function displayRecipes(data){
+        console.log(data)
+        if (data.hits.length === 0) {
+          recipeContainerEl.textContent = 'No recipes found.'; 
+          return;
+        }
+      
+      
+        for (var i = 0; i < data.hits.length; i++) {
+         
+          var recipeName = data.hits[i].recipe.label;
+          console.log(recipeName)
+      
+          var recipeEl = document.createElement('div');
+          recipeEl.innerText = data.hits[i].recipe.label
+
+          var innerRecipeEl = document.createElement('div');
+
+            onClick(recipeEl, data.hits[i])
+       
+      
+            var addIngredientsButton = document.createElement('button')
+            addIngredientsButton.innerText = "Add Ingredients to Grocery List"
+
+
+          innerRecipeEl.appendChild(recipeEl);
+          innerRecipeEl.appendChild(addIngredientsButton);
+
+          recipeContainerEl.appendChild(innerRecipeEl)
+        }
+      };
+
+
+function onClick(element, data){
+    element.addEventListener('click', function(){
+        var recipeModal = document.createElement('div');
+        var exitButton = document.createElement('button');
+        exitButton.innerText = 'X'
+        recipeModal.appendChild(exitButton)
+        var titleEl = document.createElement('iframe');
+          titleEl.setAttribute('src',data.recipe.url)
+            titleEl.setAttribute('title',data.recipe.label)
+            recipeModal.appendChild(titleEl)
+            document.body.appendChild(recipeModal)
+
+            exitButton.addEventListener('click',function(){
+              recipeModal.style.display = 'none';
+            })
+        
+    }
+
+    )
+}
+
   recipePage.style.display = "flex";
 
   // button click function
@@ -114,12 +174,15 @@ function searchButtonClickHandler() {
     .addEventListener("click", function () {
     //   searchButtonClickHandler();
       console.log("clicked")
+      console.log("debug recipes", displayRecipes  )
       searchButtonClickHandler();
+      console.log(displayRecipes,"displaying recipes")
     });
 
-var recipeClicker = function(){
-recipePage.style.display="block"
-groceryPage.style.display="none"
-map.style.display="none"
-}
+
+//recipe page
+var recipePage = document.getElementById("recipePage");
+// recipePage.style.display = "none";
+
 recipeButton.addEventListener('click', recipeClicker);
+
