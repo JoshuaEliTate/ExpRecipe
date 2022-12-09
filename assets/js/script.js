@@ -113,15 +113,13 @@ function searchButtonClickHandler() {
       console.log(data);
       displayRecipes(data);
     });
-<<<<<<< HEAD
+
 
 }
   
 
-=======
-    
 
-}
+    
     
     function displayRecipes(data){
         console.log(data)
@@ -178,7 +176,7 @@ function onClick(element, data){
 }
 
   recipePage.style.display = "flex";
->>>>>>> 0f31a64672e26f7473bd8f8a352e76cfb701d276
+
 
   // button click function
   document
@@ -191,7 +189,6 @@ function onClick(element, data){
       console.log(displayRecipes,"displaying recipes")
     });
 
-<<<<<<< HEAD
 var recipeClicker = function(){
   recipePage.style.display = "flex";
   groceryPage.style.display="none"
@@ -232,7 +229,6 @@ var mapClicker = function(){
 // maps.addEventListener('click', mapClicker);
 // recipe.addEventListener('click', recipeClicker);
 // groceries.addEventListener('click', groceryClicker);
-=======
 
 //recipe page
 var recipePage = document.getElementById("recipePage");
@@ -240,4 +236,3 @@ var recipePage = document.getElementById("recipePage");
 
 recipeButton.addEventListener('click', recipeClicker);
 
->>>>>>> 0f31a64672e26f7473bd8f8a352e76cfb701d276
