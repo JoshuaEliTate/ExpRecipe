@@ -208,14 +208,14 @@ var recipeClicker = function(){
   console.log("recipe")
 }
 
-// var groceryClicker = function(){
-//   recipePage.style.display="none"
-//   groceryPage.style.display="block"
-//   map.style.display="none"
-//   input.style.display="none"
-//   addButton.style.display="block"
-//   console.log("apples")
-// }
+var groceryClicker = function(){
+  // recipePage.style.display="none"
+  // groceryPage.style.display="block"
+  // map.style.display="none"
+  // input.style.display="none"
+  // addButton.style.display="block"
+  console.log("apples")
+}
 
 var mapClicker = function(){
   recipePage.style.display="none"
